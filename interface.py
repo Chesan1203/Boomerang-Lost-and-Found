@@ -92,7 +92,12 @@ with tab1:
                 image_path = os.path.join("data", "found", match["item_name"])
                 # Display the image and the real confidence score
                 st.image(image_path, caption=f"Match #{i+1}")
-                if match.get("search_type") == "image": #display confidence level only if search_type is image
+
+                # Show the description from the Vault
+                st.write(f"**Details:** {match['description']}")
+                st.caption(f"Added: {match['found_at']}")
+
+                if "search_type" in match and match["search_type"] == "image": #display confidence level only if search_type is image
                     st.metric("Confidence", f"{match['confidence']}%")
     else:
         st.warning("No matches found. Try a different angle or check back later!")
