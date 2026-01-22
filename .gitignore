@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+
+# AI Models & Large Data
+data/found/*
+!data/found/.gitkeep
+items.index
+*.jpg
+*.jpeg
+*.png
+
+# System
+.DS_Store
